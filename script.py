@@ -52,14 +52,16 @@ FAIXA_ETARIA = ['18 a 24 anos', '25 a 29 anos', '30 a 39 anos', '40 a 49 anos', 
 MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
 RACA = ['Amarela', 'Branca', 'Indígena','Não Identificado', "Não informado" ,'Parda', 'Preta']
 SETOR_ECONOMICO = ['Agropecuária','Comércio' ,'Construção', 'Indústria', 'Serviços']
+ANO = ['2020', '2021', '2022', '2023', '2024', '2025']
 SITUACAO_DE_POBREZA = ['Sim', 'Não']
 SEXO = ['Masculino', 'Feminino']
-ANO = ['2020', '2021', '2022', '2023', '2024', '2025']
-BOLSA_FAMILIA = ['Sim', 'Não']
+BOLSA_FAMILIA = ['Sim', 'Não'] # Lembrando q aqui vamos indicar qual indice da lista deve ser selecionado. (0 ou 1) (BOLSA_FAMILIA[0])
 CADUNICO = ['Sim', 'Não']
 MUNICIPIO = ['']
 
 # ---- FUNCOES AUXILIARES ----
+
+# A ideia seria chamar a função de exportar dados sempre ao final de cada passo.
 
 def exportarDados():
     print(PASSOD00)
@@ -88,8 +90,6 @@ def exportarDados():
     pyautogui.press('enter')
     sleep(2)
 
-
-    
 def escolherAno():
     sleep(1)
     pyautogui.click(MEIO_DA_TELA)
