@@ -32,7 +32,7 @@ O script permite a extração de dados com os seguintes filtros:
 
 1. Clone o repositório:
 ```bash
-git clone [URL_DO_REPOSITORIO]
+git clone https://github.com/MDSSisec/Extracao_de_Dados_Qlik.git
 ```
 
 2. Crie um ambiente virtual:
