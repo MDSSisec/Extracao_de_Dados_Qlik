@@ -6,21 +6,30 @@ from time import sleep
 import pyautogui
 import pandas as pd
 
-# ---- CONSTANTES ----
+# ---- CONSTANTES DE POSIÇÃO GERAL ----
 
-MEIO_DA_TELA = (1064, 260)
-POSICAO_DO_ANO = (178, 296)
-POSICAO_DO_MES = (108, 340)
-POSICAO_DO_CADUNICO = (159, 381)
-POSICAO_DA_BOLSA_FAMILIA = (170, 420)
-POSICAO_DA_SITUACAO_DE_POBREZA = (187, 457)
-POSICAO_DO_SETOR_ECONOMICO = (177, 499)
-POSICAO_DA_UF = (181, 537)
-POSICAO_DO_MUNICIPIO = (151, 579)
-POSICAO_DO_SEXO = (173, 618)
-POSICAO_DA_RACA = (181, 660)
-POSICAO_DO_GRAU_DE_INSTRUCAO = (176, 703)
-POSICAO_DA_FAIXA_ETARIA = (197, 744)
+PONTO_REF = (-800, -550)
+POSICAO_DO_ANO = (-1700, -500)
+POSICAO_DO_MES = (-1700, -450)
+POSICAO_DO_CADUNICO = (-1700, -400)
+POSICAO_DA_BOLSA_FAMILIA = (-1700, -350)
+POSICAO_DA_SITUACAO_DE_POBREZA = (-1700, -300)
+POSICAO_DO_SETOR_ECONOMICO = (-1700, -250)
+POSICAO_DA_UF = (-1700, -200)
+POSICAO_DO_MUNICIPIO = (-1700, -150) 
+POSICAO_DO_SEXO = (-1700, -90) 
+POSICAO_DA_RACA = (-1700, -40) # negativos
+POSICAO_DO_GRAU_DE_INSTRUCAO = (-1700, 10)
+POSICAO_DA_FAIXA_ETARIA = (-1700, 60)
+
+# --- CONSTANTES DE DOWNLOAD ----
+PONTO_REF_TABELA = (-300, 0)
+POSICAO_ITEM_TABELA = (-300, 1)
+POSICAO_ITEM_BAIXAR = (-300, 200)
+POSICAO_ITEM_DADOS = (-300, 90)
+POSICAO_EXPORTAR = (-820, -50)
+POSICAO_LINK = (-1000, -100)
+
 
 # PASSO A PASSO DO SCRIPT
 PASSO00 = '00 - SCRIPT INICIALIZADO:'
@@ -65,10 +74,10 @@ MUNICIPIO = ['']
 
 def exportarDados():
     print(PASSOD00)
-    pyautogui.rightClick(x=1544, y=417) # Clicar com o botão direito na tabela.
+    pyautogui.rightClick(PONTO_REF_TABELA) # Clicar com o botão direito na tabela.
     sleep(2)
     # pyautogui.doubleClick(x=1569, y=430) # Clicar na opção table
-    pyautogui.click(x=1569, y=430) # Clicar na opção table
+    pyautogui.click(POSICAO_ITEM_TABELA) # Clicar na opção table
     sleep(2)
     pyautogui.press('tab')
     sleep(2)
@@ -77,13 +86,13 @@ def exportarDados():
     pyautogui.press('enter') # Clicar na opção Download as.
     sleep(2)
     print(PASSOD02)
-    pyautogui.click(x=1611, y=514) # Clicar na opção Data.
+    pyautogui.click(POSICAO_ITEM_DADOS) # Clicar na opção Data.
     sleep(2)
     print(PASSOD03)
-    pyautogui.click(x=1097, y=654) # Clicar na opção Export.
+    pyautogui.click(POSICAO_EXPORTAR) # Clicar na opção Export.
     sleep(2)
     print(PASSOD04)
-    pyautogui.click(x=863, y=591) # Clicar no Link Azul de Download.
+    pyautogui.click(POSICAO_LINK) # Clicar no Link Azul de Download.
     sleep(5)
     pyautogui.press('tab') # Clica no Close
     sleep(2)
@@ -92,7 +101,7 @@ def exportarDados():
 
 def escolherAno():
     sleep(1)
-    pyautogui.click(MEIO_DA_TELA)
+    pyautogui.click(PONTO_REF)
     sleep(1)
     pyautogui.click(POSICAO_DO_ANO)
     sleep(1)
@@ -105,7 +114,7 @@ def escolherAno():
     exportarDados()
 
 def escolherMes():  
-    pyautogui.click(MEIO_DA_TELA)
+    pyautogui.click(PONTO_REF)
     sleep(1)
     pyautogui.click(POSICAO_DO_MES)
     sleep(1)
@@ -116,7 +125,7 @@ def escolherMes():
     pyautogui.press('esc')
 
 def escolherCadunico():
-    pyautogui.click(MEIO_DA_TELA)
+    pyautogui.click(PONTO_REF)
     sleep(1)
     pyautogui.click(POSICAO_DO_CADUNICO)
     sleep(1)
@@ -127,7 +136,7 @@ def escolherCadunico():
     pyautogui.press('esc')
 
 def escolherBolsaFamilia():
-    pyautogui.click(MEIO_DA_TELA)
+    pyautogui.click(PONTO_REF)
     sleep(1)
     pyautogui.click(POSICAO_DA_BOLSA_FAMILIA)
     sleep(1)
@@ -138,7 +147,7 @@ def escolherBolsaFamilia():
     pyautogui.press('esc')
 
 def escolherSituacaoDePobreza():
-    pyautogui.click(MEIO_DA_TELA)
+    pyautogui.click(PONTO_REF)
     sleep(1)
     pyautogui.click(POSICAO_DA_SITUACAO_DE_POBREZA)
     sleep(1)

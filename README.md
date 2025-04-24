@@ -57,7 +57,9 @@ python script.py
 ## ⚠️ Importante
 
 - O script utiliza coordenadas de tela específicas, portanto, é necessário ajustar as coordenadas caso a resolução ou o layout da tela seja diferente
+
 - Certifique-se de não mover o mouse durante a execução do script
+
 - O script inclui pausas (sleep) para garantir que as ações sejam executadas corretamente
 
 ## 📝 Estrutura do Código
