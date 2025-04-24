@@ -2,6 +2,11 @@ from time import sleep
 import pyautogui
 import pandas as pd
 
+# toDo: 
+#       - Normalizar itens do array de Grau de Instrução, deixando apenas uma palavra exclusiva de cada item.
+#       - Criar funções para selcionar PorUf e PorCNPJ
+#       - Criar menu para passagem de parametros (PorUF ou PorCNPJ e Qual ano) 
+
 # ---- CONSTANTES DE POSIÇÃO GERAL ----
 PONTO_REF = (200, 100)
 POSICAO_POR_UF = (600, 250)
@@ -103,7 +108,7 @@ RACA = [
     'Preta'
 ]
 
-GRAU_DE_INSTRUCAO = [ # toDo: Normalizar essa lista para ter apenas uma palavra reservada para cada item
+GRAU_DE_INSTRUCAO = [ 
     '5 completo fundamental', '6 a 9 fundamental', 'Analfabeto', 
     'Ate 5 incompleto', 'Doutorado', 'Fundamental Completo', 
     'Medio Completo', 'Medio Incompleto', 'Mestrado', 
