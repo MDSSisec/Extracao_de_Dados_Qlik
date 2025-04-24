@@ -1,14 +1,11 @@
-# ---- IMPORTS ----
-
 from time import sleep
-
-# import keyboard
 import pyautogui
 import pandas as pd
 
 # ---- CONSTANTES DE POSIÇÃO GERAL ----
-
 PONTO_REF = (200, 100)
+POSICAO_POR_UF = (600, 250)
+POSICAO_POR_CNPJ = (1300 , 250)
 POSICAO_DO_ANO = (200, 150)
 POSICAO_DO_MES = (200, 200)
 POSICAO_DO_CADUNICO = (200, 250)
@@ -19,7 +16,7 @@ POSICAO_DA_UF = (200, 455)
 POSICAO_DO_MUNICIPIO = (200, 520) 
 POSICAO_DO_SEXO = (200, 560) 
 POSICAO_DA_RACA = (200, 620)
-POSICAO_DO_GRAU_DE_INSTRUCAO = (200, 660)
+POSICAO_DO_GRAU_DE_INSTRUCAO = (200, 670)
 POSICAO_DA_FAIXA_ETARIA = (200, 720)
 
 # --- CONSTANTES DE DOWNLOAD ----
@@ -31,20 +28,20 @@ POSICAO_EXPORTAR    = (1100, 600)
 POSICAO_LINK        = (900,  550)
 
 
-# PASSO A PASSO DO SCRIPT
+# Constantes indicando a etapa do script
 PASSO00 = '00 - SCRIPT INICIALIZADO:'
-PASSO01 = '01 - BUSCANDO ANO'
-PASSO02 = '02 - BUSCANDO MES'
-PASSO03 = '03 - BUSCANDO CADUNICO'
-PASSO04 = '04 - BUSCANDO BOLSA FAMILIA'
-PASSO05 = '05 - BUSCANDO SITUACAO DE POBREZA'
-PASSO06 = '06 - BUSCANDO SETOR ECONOMICO'
-PASSO07 = '07 - BUSCANDO UF'
-PASSO08 = '08 - BUSCANDO POR MUNICIPIO'
-PASSO09 = '09 - BUSCANDO POR SEXO'
-PASSO10 = '10 - BUSCANDO POR RACA'
-PASSO11 = '11 - BUSCANDO POR GRAU DE INSTRUCAO'
-PASSO12 = '12 - BUSCANDO POR FAIXA ETARIA'
+PASSO01 = '01 - SELECIONANDO ANO'
+PASSO02 = '02 - SELECIONANDO MES'
+PASSO03 = '03 - SELECIONANDO CADUNICO'
+PASSO04 = '04 - SELECIONANDO BOLSA FAMILIA'
+PASSO05 = '05 - SELECIONANDO SITUACAO DE POBREZA'
+PASSO06 = '06 - SELECIONANDO SETOR ECONOMICO'
+PASSO07 = '07 - SELECIONANDO UF'
+PASSO08 = '08 - SELECIONANDO MUNICIPIO'
+PASSO09 = '09 - SELECIONANDO SEXO'
+PASSO10 = '10 - SELECIONANDO RACA'
+PASSO11 = '11 - SELECIONANDO GRAU DE INSTRUCAO'
+PASSO12 = '12 - SELECIONANDO FAIXA ETARIA'
 PASSO13 = '13 - '
 PASSO14 = '14 - '
 
@@ -55,18 +52,71 @@ PASSOD02 = '02 - ESCOLHENDO OPCAO DE EXPORTAR'
 PASSOD03 = '03 - CLICANDO NO LINK AZUL DE DOWNLOAD'
 PASSOD04 = '04 - FECHANDO A TELA DE DOWNLOAD'
 
-UF = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins']
-GRAU_DE_INSTRUCAO = ['5 completo fundamental', '6 a 9 fundamental', 'Analfabeto', 'Até 5 incompleto', 'Doutorado', 'Fundamental Completo', 'Médio Completo', 'Médio Incompleto', 'Mestrado', 'Pós-graduação Completa', 'Superior Completo', 'Superior Incompleto', 'Não Identificado']
-FAIXA_ETARIA = ['18 a 24 anos', '25 a 29 anos', '30 a 39 anos', '40 a 49 anos', '50 a 59 anos', '60 a 64 anos', 'Acima dos 65 anos', 'Até 17 anos', 'Data de Nascimento Nula', 'Data de Nascimento igual ou maior que a data de movimentação']
-MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
-RACA = ['Amarela', 'Branca', 'Indígena','Não Identificado', "Não informado" ,'Parda', 'Preta']
-SETOR_ECONOMICO = ['Agropecuária','Comércio' ,'Construção', 'Indústria', 'Serviços']
-ANO = ['2020', '2021', '2022', '2023', '2024', '2025']
-SITUACAO_DE_POBREZA = ['Sim', 'Não']
-SEXO = ['Masculino', 'Feminino']
-BOLSA_FAMILIA = ['Sim', 'Não'] # Lembrando q aqui vamos indicar qual indice da lista deve ser selecionado. (0 ou 1) (BOLSA_FAMILIA[0])
-CADUNICO = ['Sim', 'Não']
+
+# -- Arrays com os itens dos filtros --
+# -- Os itens serão buscados através do índice no array. Ex: UF[1] = "Acre" --
+# -- Os itens dos arrays devem ser normalizados removendo caracteres especiais em geral --
+
+ANO = [
+    '2020', '2021', '2022', 
+    '2023', '2024', '2025'
+]
+
+MESES = [
+    'janeiro', 'fevereiro', 'marco', 
+    'abril', 'maio', 'junho', 
+    'julho', 'agosto', 'setembro', 
+    'outubro', 'novembro', 'dezembro'
+]
+
+CADUNICO = ['Sim', 'Nao']
+
+BOLSA_FAMILIA = ['Sim', 'Nao']
+
+SITUACAO_DE_POBREZA = ['Sim', 'Nao']
+
+SETOR_ECONOMICO = [
+    'Agropecuaria', 'Comercio', 'Construcao', 
+    'Industria', 'Servicos'
+]
+
+UF = [
+    'Acre', 'Alagoas', 'Amapa', 
+    'Amazonas', 'Bahia', 'Ceara', 
+    'Distrito Federal', 'Espirito Santo', 
+    'Goias', 'Maranhao', 'Mato Grosso', 
+    'Mato Grosso do Sul', 'Minas Gerais', 
+    'Para', 'Paraiba', 'Parana', 
+    'Pernambuco', 'Piaui', 'Rio de Janeiro', 
+    'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondonia',
+    'Roraima', 'Santa Catarina', 'Sao Paulo', 
+    'Sergipe', 'Tocantins'
+]
+
 MUNICIPIO = ['']
+
+SEXO = ['Masculino', 'Feminino', 'Nao Identificado']
+
+RACA = [
+    'Amarela', 'Branca', 'Indigena',
+    'Nao Identificado', 'Nao informado', 'Parda', 
+    'Preta'
+]
+
+GRAU_DE_INSTRUCAO = [ # toDo: Normalizar essa lista para ter apenas uma palavra reservada para cada item
+    '5 completo fundamental', '6 a 9 fundamental', 'Analfabeto', 
+    'Ate 5 incompleto', 'Doutorado', 'Fundamental Completo', 
+    'Medio Completo', 'Medio Incompleto', 'Mestrado', 
+    'Pos-graduacao Completa', 'Superior Completo', 'Superior Incompleto', 
+    'Nao Identificado'
+]
+
+FAIXA_ETARIA = [
+    '18', '25', '30', 
+    '40', '50', '60', 
+    'Acima dos 65 anos', 'Ate 17 anos', 'Nula', 
+    'movimentacao'
+]
 
 # ---- FUNCOES AUXILIARES ----
 
@@ -105,13 +155,11 @@ def escolherAno():
     sleep(1)
     pyautogui.click(POSICAO_DO_ANO)
     sleep(1)
-    pyautogui.write(ANO[5])
+    pyautogui.write(ANO[0])
     sleep(1)
     pyautogui.press('enter')
     sleep(1)
     pyautogui.press('esc')
-    sleep(2)
-    exportarDados()
 
 def escolherMes():  
     pyautogui.click(PONTO_REF)
@@ -157,33 +205,141 @@ def escolherSituacaoDePobreza():
     sleep(1)
     pyautogui.press('esc')
 
+def escolherSetorEconomico():
+    pyautogui.click(PONTO_REF)
+    sleep(1)
+    pyautogui.click(POSICAO_DO_SETOR_ECONOMICO)
+    sleep(1)
+    pyautogui.write(SETOR_ECONOMICO[4]) #, interval=0.10
+    # sleep(0.5)
+    pyautogui.press('enter')
+    sleep(1)
+    pyautogui.press('esc')
+
+def escolherUF():
+    pyautogui.click(PONTO_REF)
+    sleep(1)
+
+    pyautogui.click(POSICAO_DA_UF)
+    sleep(1)
+    pyautogui.write(UF[0])
+
+    pyautogui.press('enter')
+    sleep(1)
+    pyautogui.press('esc')
+
+def escolherMunicipio(): # não vai ser utilizado por agora
+    pyautogui.click(PONTO_REF)
+    sleep(1)
+    pyautogui.click(POSICAO_DO_MUNICIPIO)
+    sleep(1)
+    pyautogui.write(MUNICIPIO[0]) 
+    pyautogui.press('enter')
+    sleep(1)
+    pyautogui.press('esc')
+
+def escolherSexo():
+    pyautogui.click(PONTO_REF)
+    sleep(1)
+    pyautogui.click(POSICAO_DO_SEXO)
+    sleep(1)
+    pyautogui.write(SEXO[0])
+    pyautogui.press('enter')
+    sleep(1)
+    pyautogui.press('esc')
+
+def escolherRaçaCor():
+    pyautogui.click(PONTO_REF)
+    sleep(1)
+    pyautogui.click(POSICAO_DA_RACA)
+    sleep(1)
+    pyautogui.write(RACA[0])
+    pyautogui.press('enter')
+    sleep(1)
+    pyautogui.press('esc')
+
+def escolherGrauDeInstrucao():
+    pyautogui.click(PONTO_REF)
+    sleep(1)
+    pyautogui.click(POSICAO_DO_GRAU_DE_INSTRUCAO)
+    sleep(1)
+    pyautogui.write(GRAU_DE_INSTRUCAO[0])
+    pyautogui.press('enter')
+    sleep(1)
+    pyautogui.press('esc')
+
+def escolherFaixaEtaria():
+    pyautogui.click(PONTO_REF)
+    sleep(1)
+    pyautogui.click(POSICAO_DA_FAIXA_ETARIA)
+    sleep(1)
+    pyautogui.write(FAIXA_ETARIA[0])
+    pyautogui.press('enter')
+    sleep(1)
+    pyautogui.press('esc')
+
+# funcao template para escolha dos filtros
+def escolherTemplate():
+    pyautogui.click(PONTO_REF)
+    sleep(1)
+    pyautogui.click('POSICAO')
+    sleep(1)
+    pyautogui.write('[0]')
+    pyautogui.press('enter')
+    sleep(1)
+    pyautogui.press('esc')
+
 # ---- FUNCAO PRINCIPAL ----
 
 def main():
-    sleep(3) #sleep para começar o script
-    # print(PASSO00)
+    print(PASSO00)
+    sleep(1)  # sleep para começar o script
+
+    print(PASSO01)
+    escolherAno()
+    sleep(1)
+
     print(PASSO02)
     escolherMes()
     sleep(1)
-    # print(PASSO01)
-    escolherAno()
-    sleep(1)
-    # sleep(1)
-    # print(PASSO03)
-    # escolherCadunico()
-    # sleep(1)
-    # print(PASSO04)
-    # escolherBolsaFamilia()
-    # sleep(1)
-    # print(PASSO05)
-    # escolherSituacaoDePobreza()
-    # sleep(1)
-    # print(PASSO06)
-    # escolherSetorEconomico()
 
+    print(PASSO03)
+    escolherCadunico()
+    sleep(1)
+
+    print(PASSO04)
+    escolherBolsaFamilia()
+    sleep(1)
+
+    print(PASSO05)
+    escolherSituacaoDePobreza()
+    sleep(1)
+
+    print(PASSO06)
+    escolherSetorEconomico()
+    sleep(1)
+
+    # print(PASSO07)
+    # escolherUF()
+    # sleep(1)
+
+    print(PASSO09)
+    escolherSexo()
+    sleep(1)
+
+    print(PASSO10)
+    escolherRaçaCor()
+    sleep(1)
+
+    print(PASSO11)
+    escolherGrauDeInstrucao()
+    sleep(1)
+
+    print(PASSO12)
+    escolherFaixaEtaria()
+    sleep(1)
+
+    exportarDados()
 
 if __name__ == '__main__':
     main()
-
-
-
