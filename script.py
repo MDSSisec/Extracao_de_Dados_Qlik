@@ -24,7 +24,7 @@ POSICAO_DA_FAIXA_ETARIA = (200, 720)
 
 # --- CONSTANTES DE DOWNLOAD ----
 PONTO_REF_TABELA    = (1300, 400)
-POSICAO_ITEM_TABELA = (1300, 401)
+POSICAO_ITEM_TABELA = (1305, 405)
 POSICAO_ITEM_BAIXAR = (1305, 600)
 POSICAO_ITEM_DADOS  = (1305, 500)
 POSICAO_EXPORTAR    = (1100, 600)
@@ -160,6 +160,7 @@ def escolherSituacaoDePobreza():
 # ---- FUNCAO PRINCIPAL ----
 
 def main():
+    sleep(3) #sleep para começar o script
     # print(PASSO00)
     print(PASSO02)
     escolherMes()
