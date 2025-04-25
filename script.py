@@ -35,6 +35,8 @@ POSICAO_LINK        = (900,  550)
 
 # Constantes indicando a etapa do script
 PASSO00 = '00 - SCRIPT INICIALIZADO:'
+PASSOPORUF = 'SELECIONANDO POR UF'
+PASSOPORCNPJ = 'SELECIONANDO POR CNPJ'
 PASSO01 = '01 - SELECIONANDO ANO'
 PASSO02 = '02 - SELECIONANDO MES'
 PASSO03 = '03 - SELECIONANDO CADUNICO'
@@ -100,7 +102,7 @@ UF = [
 
 MUNICIPIO = ['']
 
-SEXO = ['Masculino', 'Feminino', 'Nao Identificado']
+SEXO = ['Homem', 'Mulher', 'Nao Identificado']
 
 RACA = [
     'Amarela', 'Branca', 'Indigena',
@@ -126,6 +128,9 @@ FAIXA_ETARIA = [
 # ---- FUNCOES AUXILIARES ----
 
 # A ideia seria chamar a função de exportar dados sempre ao final de cada passo.
+
+def esperar():
+    sleep(1)
 
 def exportarDados():
     print(PASSOD00)
@@ -153,6 +158,18 @@ def exportarDados():
     sleep(2)
     pyautogui.press('enter')
     sleep(2)
+
+def escolherPorUF():
+    sleep(1)
+    pyautogui.click(PONTO_REF)
+    sleep(1)
+    pyautogui.click(POSICAO_POR_UF)
+
+def escolherPorCNPJ():
+    sleep(1)
+    pyautogui.click(PONTO_REF)
+    sleep(1)
+    pyautogui.click(POSICAO_POR_CNPJ)
 
 def escolherAno():
     sleep(1)
@@ -263,12 +280,12 @@ def escolherRaçaCor():
     sleep(1)
     pyautogui.press('esc')
 
-def escolherGrauDeInstrucao():
+def escolherGrauDeInstrucao(): 
     pyautogui.click(PONTO_REF)
     sleep(1)
     pyautogui.click(POSICAO_DO_GRAU_DE_INSTRUCAO)
     sleep(1)
-    pyautogui.write(GRAU_DE_INSTRUCAO[0])
+    pyautogui.write(GRAU_DE_INSTRUCAO[0]) # vai ser necessário utilizar navegacao por tabulacao aqui por conta de que não existem palavras exclusivas para cada filtro
     pyautogui.press('enter')
     sleep(1)
     pyautogui.press('esc')
@@ -299,6 +316,14 @@ def escolherTemplate():
 def main():
     print(PASSO00)
     sleep(1)  # sleep para começar o script
+
+    print(PASSOPORCNPJ)
+    escolherPorCNPJ()
+    sleep(1)
+
+    print(PASSOPORUF)
+    escolherPorUF()
+    sleep(1)
 
     print(PASSO01)
     escolherAno()
