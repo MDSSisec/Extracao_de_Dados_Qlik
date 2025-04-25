@@ -58,6 +58,8 @@ python script.py
 
 - O script utiliza coordenadas de tela específicas, portanto, é necessário ajustar as coordenadas caso a resolução ou o layout da tela seja diferente
 
+- Esta automação só funcionará corretamente se o navegador estiver em tela cheia e a resolução da tela principal for 1920x1080.
+
 - Certifique-se de não mover o mouse durante a execução do script
 
 - O script inclui pausas (sleep) para garantir que as ações sejam executadas corretamente
@@ -66,7 +68,3 @@ python script.py
 
 - `script.py`: Contém a lógica principal do script
 - `requirements.txt`: Lista as dependências do projeto
-
-## 🔒 Segurança
-
-Este repositório é privado e contém informações sensíveis. Não compartilhe as credenciais ou dados de acesso. 
