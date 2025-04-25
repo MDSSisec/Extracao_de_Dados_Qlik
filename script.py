@@ -110,13 +110,14 @@ RACA = [
     'Preta'
 ]
 
-GRAU_DE_INSTRUCAO = [ 
-    '5 completo fundamental', '6 a 9 fundamental', 'Analfabeto', 
-    'Ate 5 incompleto', 'Doutorado', 'Fundamental Completo', 
-    'Medio Completo', 'Medio Incompleto', 'Mestrado', 
-    'Pos-graduacao Completa', 'Superior Completo', 'Superior Incompleto', 
-    'Nao Identificado'
+GRAU_DE_INSTRUCAO = [
+    "5º completo fundamental", "6ª a 9ª fundamental", "Analfabeto",
+    "Até 5º incompleto", "Doutorado", "Fundamental completo",
+    "Médio completo", "Médio incompleto", "Mestrado",
+    "Não identificado", "Pós-graduação completa", "Superior completo",
+    "Superior incompleto"
 ]
+
 
 FAIXA_ETARIA = [
     '18', '25', '30', 
@@ -280,15 +281,18 @@ def escolherRaçaCor():
     sleep(1)
     pyautogui.press('esc')
 
-def escolherGrauDeInstrucao(): 
+def escolherGrauDeInstrucao():  # vai ser necessário utilizar navegacao por tabulacao aqui por conta de que não existem palavras exclusivas para cada filtro
     pyautogui.click(PONTO_REF)
     sleep(1)
     pyautogui.click(POSICAO_DO_GRAU_DE_INSTRUCAO)
     sleep(1)
-    pyautogui.write(GRAU_DE_INSTRUCAO[0]) # vai ser necessário utilizar navegacao por tabulacao aqui por conta de que não existem palavras exclusivas para cada filtro
-    pyautogui.press('enter')
+    pyautogui.press('tab')
     sleep(1)
-    pyautogui.press('esc')
+    pyautogui.press('down', presses=5) # cada press é para cada item de GRAU_DE_INSTRUCAO
+    sleep(1)
+    pyautogui.press('space') 
+    sleep(1)
+    pyautogui.press('enter')
 
 def escolherFaixaEtaria():
     pyautogui.click(PONTO_REF)
@@ -349,9 +353,9 @@ def main():
     escolherSetorEconomico()
     sleep(1)
 
-    # print(PASSO07)
-    # escolherUF()
-    # sleep(1)
+    print(PASSO07)
+    escolherUF()
+    sleep(1)
 
     print(PASSO09)
     escolherSexo()
