@@ -3,9 +3,9 @@ import pyautogui
 import pandas as pd
 
 # toDo: 
-#       - Normalizar itens do array de Grau de Instrução, deixando apenas uma palavra exclusiva de cada item.
-#       - Criar funções para selcionar PorUf e PorCNPJ
-#       - Criar menu para passagem de parametros (PorUF ou PorCNPJ e Qual ano) 
+#       - Criar funcao donwloadDados
+#       - Criar funcao carregarDados
+#       - Criar funcao de loop que itera sobre cada filtro individualmente
 
 # ---- CONSTANTES DE POSIÇÃO GERAL ----
 PONTO_REF = (200, 100)
@@ -211,7 +211,8 @@ def escolherBolsaFamilia():
     sleep(1)
     pyautogui.click(POSICAO_DA_BOLSA_FAMILIA)
     sleep(1)
-    pyautogui.write(BOLSA_FAMILIA[0])
+    for i in BOLSA_FAMILIA:
+        pyautogui.write(BOLSA_FAMILIA[0])
     sleep(1)
     pyautogui.press('enter')
     sleep(1)
@@ -304,6 +305,44 @@ def escolherFaixaEtaria():
     sleep(1)
     pyautogui.press('esc')
 
+def carregarDados():
+    escolherPorUF()
+    sleep(1)
+
+    escolherAno()
+    sleep(1)
+
+    escolherMes()
+    sleep(1)
+
+    escolherCadunico()
+    sleep(1)
+
+    escolherBolsaFamilia()
+    sleep(1)
+
+    escolherSituacaoDePobreza()
+    sleep(1)
+
+    escolherSetorEconomico()
+    sleep(1)
+
+    escolherUF()
+    sleep(1)
+
+    escolherSexo()
+    sleep(1)
+
+    escolherRaçaCor()
+    sleep(1)
+
+    escolherGrauDeInstrucao()
+    sleep(1)
+
+    escolherFaixaEtaria()
+    sleep(1)
+    
+
 # funcao template para escolha dos filtros
 def escolherTemplate():
     pyautogui.click(PONTO_REF)
@@ -321,59 +360,63 @@ def main():
     print(PASSO00)
     sleep(1)  # sleep para começar o script
 
+    # print('Carregando dados dos filtros...')
+    # carregarDados()
+    # sleep(1)
+
     print(PASSOPORCNPJ)
     escolherPorCNPJ()
     sleep(1)
 
-    print(PASSOPORUF)
-    escolherPorUF()
-    sleep(1)
+    # print(PASSOPORUF)
+    # escolherPorUF()
+    # sleep(1)
 
-    print(PASSO01)
-    escolherAno()
-    sleep(1)
+    # print(PASSO01)
+    # escolherAno()
+    # sleep(1)
 
-    print(PASSO02)
-    escolherMes()
-    sleep(1)
+    # print(PASSO02)
+    # escolherMes()
+    # sleep(1)
 
-    print(PASSO03)
-    escolherCadunico()
-    sleep(1)
+    # print(PASSO03)
+    # escolherCadunico()
+    # sleep(1)
 
     print(PASSO04)
     escolherBolsaFamilia()
     sleep(1)
 
-    print(PASSO05)
-    escolherSituacaoDePobreza()
-    sleep(1)
+    # print(PASSO05)
+    # escolherSituacaoDePobreza()
+    # sleep(1)
 
-    print(PASSO06)
-    escolherSetorEconomico()
-    sleep(1)
+    # print(PASSO06)
+    # escolherSetorEconomico()
+    # sleep(1)
 
-    print(PASSO07)
-    escolherUF()
-    sleep(1)
+    # print(PASSO07)
+    # escolherUF()
+    # sleep(1)
 
-    print(PASSO09)
-    escolherSexo()
-    sleep(1)
+    # print(PASSO09)
+    # escolherSexo()
+    # sleep(1)
 
-    print(PASSO10)
-    escolherRaçaCor()
-    sleep(1)
+    # print(PASSO10)
+    # escolherRaçaCor()
+    # sleep(1)
 
-    print(PASSO11)
-    escolherGrauDeInstrucao()
-    sleep(1)
+    # print(PASSO11)
+    # escolherGrauDeInstrucao()
+    # sleep(1)
 
-    print(PASSO12)
-    escolherFaixaEtaria()
-    sleep(1)
+    # print(PASSO12)
+    # escolherFaixaEtaria()
+    # sleep(1)
 
-    exportarDados()
+    # exportarDados()
 
 if __name__ == '__main__':
     main()
