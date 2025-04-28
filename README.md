@@ -28,6 +28,15 @@ O script permite a extração de dados com os seguintes filtros:
 - Grau de Instrução
 - Faixa Etária
 
+## 📁 Estrutura do Projeto
+
+- `arquivoPrincipal.py`: Arquivo principal que contém a função main e coordena a execução do script
+- `constantesPosicoes.py`: Contém as constantes de posições de tela para interação com a interface
+- `constantesTextos.py`: Contém as constantes de textos utilizados nos filtros (anos, meses, UFs, etc.)
+- `funcoesAuxiliares.py`: Contém as funções auxiliares para manipulação dos filtros
+- `scriptCapturaPosicao.py`: Script auxiliar para capturar posições de tela
+- `requirements.txt`: Lista de dependências do projeto
+
 ## ⚙️ Configuração
 
 1. Clone o repositório:
@@ -49,9 +58,9 @@ pip install -r requirements.txt
 ## 🚀 Como Usar
 
 1. Certifique-se de que o Qlik Sense está aberto e na visualização correta
-2. Execute o script:
+2. Execute o script principal:
 ```bash
-python script.py
+python arquivoPrincipal.py
 ```
 
 ## ⚠️ Importante
@@ -64,7 +73,6 @@ python script.py
 
 - O script inclui pausas (sleep) para garantir que as ações sejam executadas corretamente
 
-## 📝 Estrutura do Código
+## 🔧 Ferramentas Auxiliares
 
-- `script.py`: Contém a lógica principal do script
-- `requirements.txt`: Lista as dependências do projeto
+- `scriptCapturaPosicao.py`: Utilize este script para capturar novas posições de tela quando necessário
