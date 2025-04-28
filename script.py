@@ -2,6 +2,7 @@ from time import sleep
 import pyautogui
 import pandas as pd
 import constantesPosicoes
+import constantesTextos
 
 # toDo:
 #       - modularizar funcoes em arquivo separado
@@ -13,47 +14,6 @@ import constantesPosicoes
 # - Os itens serão buscados através do índice no array. Ex: UF[1] = "Acre" -
 # - Os itens dos arrays devem ser normalizados removendo caracteres especiais em geral -
 
-ANO = [
-    '2020', '2021', '2022', 
-    '2023', '2024', '2025'
-]
-
-MESES = [
-    'janeiro', 'fevereiro', 'marco', 
-    'abril', 'maio', 'junho', 
-    'julho', 'agosto', 'setembro', 
-    'outubro', 'novembro', 'dezembro'
-]
-
-UF = [
-    'Acre', 'Alagoas', 'Amapa', 
-    'Amazonas', 'Bahia', 'Ceara', 
-    'Distrito Federal', 'Espirito Santo', 
-    'Goias', 'Maranhao', 'Mato Grosso', 
-    'Mato Grosso do Sul', 'Minas Gerais', 
-    'Para', 'Paraiba', 'Parana', 
-    'Pernambuco', 'Piaui', 'Rio de Janeiro', 
-    'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondonia',
-    'Roraima', 'Santa Catarina', 'Sao Paulo', 
-    'Sergipe', 'Tocantins'
-]
-
-MUNICIPIO = ['']
-
-GRAU_DE_INSTRUCAO = [
-    "5º completo fundamental", "6ª a 9ª fundamental", "Analfabeto",
-    "Até 5º incompleto", "Doutorado", "Fundamental completo",
-    "Médio completo", "Médio incompleto", "Mestrado",
-    "Não identificado", "Pós-graduação completa", "Superior completo",
-    "Superior incompleto"
-]
-
-FAIXA_ETARIA = [
-    '18', '25', '30', 
-    '40', '50', '60', 
-    'Acima dos 65 anos', 'Ate 17 anos', 'Nula', 
-    'movimentacao'
-]
 
 # ---- FUNCOES AUXILIARES ----
 
