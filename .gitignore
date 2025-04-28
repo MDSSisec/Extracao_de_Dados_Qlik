@@ -1,0 +1,14 @@
+# Bytecode do Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+
+# Virtualenv
+venv/
+.env/
+
+# IDE/Editor
+.vscode/
+.idea/
