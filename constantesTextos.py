@@ -52,7 +52,6 @@ UF = [
     'Tocantins',
 ]
 
-
 MUNICIPIO = ['']
 
 GRAU_DE_INSTRUCAO = [
