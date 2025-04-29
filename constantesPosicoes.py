@@ -48,6 +48,33 @@ POSICAO_CR_NIN = (150, 850) # cor NAO INFORMADA
 POSICAO_CR_PRD = (150, 880) # cor PARDA
 POSICAO_CR_PRT = (150, 910) # cor PRETA
 
+# posicoes filtro Grau de instrução
+POSICAO_GI_1  = (200, 787)  # Grau de Instrução 5° Completo Fundamental
+POSICAO_GI_2  = (200, 815)  # Grau de Instrução 6° a 9° Fundamental
+POSICAO_GI_3  = (200, 845)  # Grau de Instrução Analfabeto
+POSICAO_GI_4  = (200, 875)  # Grau de Instrução Até 5° Incompleto
+POSICAO_GI_5  = (200, 905)  # Grau de Instrução Doutorado
+POSICAO_GI_6  = (200, 930)  # Grau de Instrução Fundamental Completo
+POSICAO_GI_7  = (200, 960)  # Grau de Instrução Médio Completo
+POSICAO_GI_8  = (200, 990)  # Grau de Instrução Médio Incompleto
+POSICAO_GI_9  = (200, 888)  # Grau de Instrução Mestrado [scroll]
+POSICAO_GI_10 = (200, 917)  # Grau de Instrução Não Identificado
+POSICAO_GI_11 = (200, 945)  # Grau de Instrução Pós-Graduação Incompleta
+POSICAO_GI_12 = (200, 975)  # Grau de Instrução Superior Completo
+POSICAO_GI_13 = (200, 1000) # Grau de Instrução Superior Incompleto
+
+# posicoes filtro Faixa Etária
+POSICAO_FE_18A24  = (180, 825) # Faixa Etária de 18 a 24 anos 
+POSICAO_FE_25A29  = (180, 853) # Faixa Etária de 25 a 29 anos  
+POSICAO_FE_30A39  = (180, 883) # Faixa Etária de 30 a 39 anos  
+POSICAO_FE_40A49  = (180, 911) # Faixa Etária de 40 a 49 anos  
+POSICAO_FE_50A59  = (180, 941) # Faixa Etária de 50 a 59 anos  
+POSICAO_FE_60A64  = (180, 970) # Faixa Etária de 60 a 64 anos  
+POSICAO_FE_ACI65  = (180, 999) # Faixa Etária de Acima de 65 anos  
+POSICAO_FE_ATE17  = (180, 1027) # Faixa Etária de Até 17 anos  
+POSICAO_FE_DTNMV  = (180, 1011) # Faixa Etária de Data de nascimento igual ou maior que a data de movimentação
+POSICAO_FE_DNULL  = (180, 1041) # Faixa Etária de Data de nascimento Nula  
+
 # --- CONSTANTES DA FUNÇÃO exportarDados ----
 PONTO_REF_TABELA    = (1300 , 400)
 POSICAO_ITEM_TABELA = (1305 , 405)
