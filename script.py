@@ -1,7 +1,7 @@
 from time import sleep
 import pyautogui
 import pandas as pd
-from funcoesAuxiliares import carregarFiltros, selecionarMacros
+from funcoesAuxiliares import carregarFiltros, selecionarMacros, exportarDados
 
 # toDo:
 #       - modularizar funcoes em arquivo separado
@@ -13,7 +13,7 @@ from funcoesAuxiliares import carregarFiltros, selecionarMacros
 
 def main():
     print('Inicializando script')
-    selecionarMacros()    
+    # selecionarMacros()    
     # selecionarAno()
     carregarFiltros()
 

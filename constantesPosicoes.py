@@ -22,12 +22,15 @@ POSICAO_DA_FAIXA_ETARIA         = (200, 720)   # Dropdown Faixa Etária
 # posicoes filtro bolsa familia
 POSICAO_BF_SIM = (90, 450)
 POSICAO_BF_NAO = (90, 420)
+POSICAO_BF_ANC = (90, 420) # Posicao ANC é a posicao do primeiro item da lista
 
 # posicoes filtro situacao de pobreza
 POSICAO_SP_SIM = (90, 500) 
 POSICAO_SP_NAO = (90, 475) 
+POSICAO_SP_ANC = (90, 475) 
 
 # posicoes filtro setor economico
+POSICAO_SE_ANC = (100, 525) # setor AGRONEGOCIO
 POSICAO_SE_AGR = (100, 525) # setor AGRONEGOCIO
 POSICAO_SE_CMR = (100, 555) # setor COMERCIO
 POSICAO_SE_CST = (100, 585) # setor CONSTRUCAO
@@ -35,11 +38,13 @@ POSICAO_SE_IND = (100, 610) # setor INDUSTRIA
 POSICAO_SE_SER = (100, 640) # setor SERVICOS
 
 # posicoes filtro sexo
+POSICAO_SX_ANC = (150, 680) # sexo HOMEM
 POSICAO_SX_HOM = (150, 680) # sexo HOMEM
 POSICAO_SX_MUL = (150, 710) # sexo MULHER
 POSICAO_SX_NID = (150, 740) # sexo NAO IDENTIFICADO
 
 # posicoes filtro cor/raca
+POSICAO_CR_ANC = (150, 735) # cor AMARELA
 POSICAO_CR_AMA = (150, 735) # cor AMARELA
 POSICAO_CR_BRC = (150, 765) # cor BRANCA
 POSICAO_CR_IND = (150, 795) # cor INDIGENA
@@ -49,6 +54,7 @@ POSICAO_CR_PRD = (150, 880) # cor PARDA
 POSICAO_CR_PRT = (150, 910) # cor PRETA
 
 # posicoes filtro Grau de instrução
+POSICAO_ANC   = (200, 787)  # Grau de Instrução 5° Completo Fundamental
 POSICAO_GI_1  = (200, 787)  # Grau de Instrução 5° Completo Fundamental
 POSICAO_GI_2  = (200, 815)  # Grau de Instrução 6° a 9° Fundamental
 POSICAO_GI_3  = (200, 845)  # Grau de Instrução Analfabeto
@@ -64,6 +70,7 @@ POSICAO_GI_12 = (200, 975)  # Grau de Instrução Superior Completo
 POSICAO_GI_13 = (200, 1000) # Grau de Instrução Superior Incompleto
 
 # posicoes filtro Faixa Etária
+POSICAO_FE_ANC  = (180, 825) # Faixa Etária de 18 a 24 anos 
 POSICAO_FE_18A24  = (180, 825) # Faixa Etária de 18 a 24 anos 
 POSICAO_FE_25A29  = (180, 853) # Faixa Etária de 25 a 29 anos  
 POSICAO_FE_30A39  = (180, 883) # Faixa Etária de 30 a 39 anos  
@@ -76,9 +83,10 @@ POSICAO_FE_DTNMV  = (180, 1011) # Faixa Etária de Data de nascimento igual ou m
 POSICAO_FE_DNULL  = (180, 1041) # Faixa Etária de Data de nascimento Nula  
 
 # --- CONSTANTES DA FUNÇÃO exportarDados ----
-PONTO_REF_TABELA    = (1300 , 400)
-POSICAO_ITEM_TABELA = (1305 , 405)
-POSICAO_ITEM_BAIXAR = (1305 , 600)
-POSICAO_ITEM_DADOS  = (1305 , 500)
-POSICAO_EXPORTAR    = (1100 , 600)
-POSICAO_LINK        = (900  , 550)
+PONTO_REF_TABELA      = (1300 , 400)
+POSICAO_ITEM_TABELA   = (1305 , 405)
+POSICAO_ITEM_BAIXAR   = (1305 , 600)
+POSICAO_ITEM_DADOS    = (1305 , 500)
+POSICAO_ITEM_EXPORTAR = (1100 , 600)
+POSICAO_ITEM_LINK     = (900  , 550)
+POSICAO_ITEM_FECHAR   = (1164  , 598)
