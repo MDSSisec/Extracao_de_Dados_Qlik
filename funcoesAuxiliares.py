@@ -4,6 +4,8 @@ import pyautogui
 import constantesTextos
 import constantesPosicoes
 
+# toDo: Adicionar lógica de exportação nos filtros restantes: raca/cor, GI, FE
+
 def pausaCurta():
     sleep(1)
 
