@@ -6,8 +6,8 @@ from funcoesAuxiliares import carregarFiltros, selecionarMacros
 
 def main():
     print('Inicializando script')
-    selecionarMacros()    
-    carregarFiltros()
+    macro, ano = selecionarMacros()
+    carregarFiltros(macro, ano)
 
 if __name__ == '__main__':
     main()
