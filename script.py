@@ -1,13 +1,12 @@
 from time import sleep
-import pyautogui
 import pandas as pd
-from funcoesAuxiliares import carregarFiltros, selecionarMacros, exportarDados
+from funcoesAuxiliares import carregarFiltros, selecionarMacros
 
 # ---- FUNCAO PRINCIPAL ----
 
 def main():
     print('Inicializando script')
-    # selecionarMacros()    
+    selecionarMacros()    
     carregarFiltros()
 
 if __name__ == '__main__':
