@@ -54,7 +54,7 @@ POSICAO_CR_PRD = (150, 880) # cor PARDA
 POSICAO_CR_PRT = (150, 910) # cor PRETA
 
 # posicoes filtro Grau de instrução
-POSICAO_ANC   = (200, 787)  # Grau de Instrução 5° Completo Fundamental
+POSICAO_GI_ANC   = (200, 787)  # Grau de Instrução 5° Completo Fundamental
 POSICAO_GI_1  = (200, 787)  # Grau de Instrução 5° Completo Fundamental
 POSICAO_GI_2  = (200, 815)  # Grau de Instrução 6° a 9° Fundamental
 POSICAO_GI_3  = (200, 845)  # Grau de Instrução Analfabeto

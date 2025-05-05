@@ -7,8 +7,7 @@ from funcoesAuxiliares import carregarFiltros, selecionarMacros, exportarDados
 
 def main():
     print('Inicializando script')
-    # selecionarMacros()    
-    # selecionarAno()
+    selecionarMacros()    
     carregarFiltros()
 
 if __name__ == '__main__':
