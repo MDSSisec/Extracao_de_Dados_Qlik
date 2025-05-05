@@ -4,7 +4,7 @@ import pyautogui
 import constantesTextos
 import constantesPosicoes
 
-# toDo: Adicionar lógica de exportação nos filtros restantes: raca/cor, GI, FE
+# toDo: Adicionar lógica de exportação nos filtros restantes: GI, FE
 
 def pausaCurta():
     sleep(1)
@@ -212,28 +212,53 @@ def carregarRaçaCor():
     print('Carregando filtro - Raça/Cor')
     clicar(constantesPosicoes.PONTO_REF)
     clicar(constantesPosicoes.POSICAO_DA_RACA)
+
     clicar(constantesPosicoes.POSICAO_CR_AMA)
     pausaLonga()
-    clicar(constantesPosicoes.POSICAO_CR_AMA)
+    exportarDados()
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_RACA)
+    clicar(constantesPosicoes.POSICAO_CR_ANC)
     clicar(constantesPosicoes.POSICAO_CR_BRC)
     pausaLonga()
-    clicar(constantesPosicoes.POSICAO_CR_BRC)
+    exportarDados()
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_RACA)
+    clicar(constantesPosicoes.POSICAO_CR_ANC)
     clicar(constantesPosicoes.POSICAO_CR_IND)
     pausaLonga()
-    clicar(constantesPosicoes.POSICAO_CR_IND)
+    exportarDados()
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_RACA)
+    clicar(constantesPosicoes.POSICAO_CR_ANC)
     clicar(constantesPosicoes.POSICAO_CR_NID)
     pausaLonga()
-    clicar(constantesPosicoes.POSICAO_CR_NID)
+    exportarDados()
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_RACA)
+    clicar(constantesPosicoes.POSICAO_CR_ANC)
     clicar(constantesPosicoes.POSICAO_CR_NIN)
     pausaLonga()
-    clicar(constantesPosicoes.POSICAO_CR_NIN)
+    exportarDados()
+
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_RACA)
+    clicar(constantesPosicoes.POSICAO_CR_ANC)
     clicar(constantesPosicoes.POSICAO_CR_PRD)
     pausaLonga()
-    clicar(constantesPosicoes.POSICAO_CR_PRD)
-    clicar(constantesPosicoes.POSICAO_CR_PRT)
-    pausaLonga()
+    exportarDados()
+    
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_RACA)
+    clicar(constantesPosicoes.POSICAO_CR_ANC)
     clicar(constantesPosicoes.POSICAO_CR_PRT)
     pausaCurta()
+    exportarDados()
 
 def carregarGrauDeInstrucao():
     print('Carregando filtro - Grau de Instrução')
@@ -328,7 +353,7 @@ def carregarFiltros():
     # carregarBolsaFamilia()
     # carregarSituacaoDePobreza()
     # carregarSetorEconomico()
-    carregarSexo()
-    # carregarRaçaCor()
+    # carregarSexo()
+    carregarRaçaCor()
     # carregarGrauDeInstrucao()
     # carregarFaixaEtaria()
