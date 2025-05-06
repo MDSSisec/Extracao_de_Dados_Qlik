@@ -7,7 +7,7 @@ import constantesPosicoes
 from datetime import datetime
 
 # === VARIÁVEIS GLOBAIS ===
-PASTA_DOWNLOADS = r"D:\Donwloads\QLIK"
+PASTA_DOWNLOADS = r"D:\Donwloads\QLIK" # Alterar aqui
 macro_atual = None
 ano_atual = None
 
@@ -281,16 +281,101 @@ def carregarRacaCor(macro, ano):
 
 def carregarGrauDeInstrucao(macro, ano):
     print('Carregando filtro - Grau de Instrução')
+
     clicar(constantesPosicoes.PONTO_REF)
     clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_1)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_1", "GrauInstrucao")
 
-    for i in range(1, 14):
-        if i > 8:
-            rolar(-200)
-        clicar(constantesPosicoes.POSICAO_GI_ANC)
-        clicar(getattr(constantesPosicoes, f"POSICAO_GI_{i}"))
-        pausaLonga()
-        exportarDados(macro, ano, f"GI_{i}", "GrauInstrucao")
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    clicar(constantesPosicoes.POSICAO_GI_2)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_2", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    clicar(constantesPosicoes.POSICAO_GI_3)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_3", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    clicar(constantesPosicoes.POSICAO_GI_4)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_4", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    clicar(constantesPosicoes.POSICAO_GI_5)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_5", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    clicar(constantesPosicoes.POSICAO_GI_6)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_6", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    clicar(constantesPosicoes.POSICAO_GI_7)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_7", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    clicar(constantesPosicoes.POSICAO_GI_8)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_8", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    rolar(-200)
+    clicar(constantesPosicoes.POSICAO_GI_9)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_9", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    rolar(-200)
+    clicar(constantesPosicoes.POSICAO_GI_10)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_10", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    rolar(-200)
+    clicar(constantesPosicoes.POSICAO_GI_11)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_11", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    rolar(-200)
+    clicar(constantesPosicoes.POSICAO_GI_12)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_12", "GrauInstrucao")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
+    clicar(constantesPosicoes.POSICAO_GI_ANC)
+    rolar(-200)
+    clicar(constantesPosicoes.POSICAO_GI_13)
+    pausaLonga()
+    exportarDados(macro, ano, "GI_13", "GrauInstrucao")
 
     clicar(constantesPosicoes.PONTO_REF)
     clicar(constantesPosicoes.POSICAO_DO_GRAU_DE_INSTRUCAO)
@@ -299,36 +384,83 @@ def carregarGrauDeInstrucao(macro, ano):
 
 def carregarFaixaEtaria(macro, ano):
     print('Carregando filtro - Faixa Etária')
+
     clicar(constantesPosicoes.PONTO_REF)
     clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
+    clicar(constantesPosicoes.POSICAO_FE_18A24)
+    pausaLonga()
+    exportarDados(macro, ano, "FE_18A24", "FaixaEtaria")
 
-    faixas = [
-        ("FE_18A24", constantesPosicoes.POSICAO_FE_18A24),
-        ("FE_25A29", constantesPosicoes.POSICAO_FE_25A29),
-        ("FE_30A39", constantesPosicoes.POSICAO_FE_30A39),
-        ("FE_40A49", constantesPosicoes.POSICAO_FE_40A49),
-        ("FE_50A59", constantesPosicoes.POSICAO_FE_50A59),
-        ("FE_60A64", constantesPosicoes.POSICAO_FE_60A64),
-        ("FE_ACI65", constantesPosicoes.POSICAO_FE_ACI65),
-        ("FE_ATE17", constantesPosicoes.POSICAO_FE_ATE17),
-        ("FE_DTNMV", constantesPosicoes.POSICAO_FE_DTNMV),
-        ("FE_DNULL", constantesPosicoes.POSICAO_FE_DNULL),
-    ]
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
+    clicar(constantesPosicoes.POSICAO_FE_ANC)
+    clicar(constantesPosicoes.POSICAO_FE_25A29)
+    pausaLonga()
+    exportarDados(macro, ano, "FE_25A29", "FaixaEtaria")
 
-    for tag, pos in faixas:
-        clicar(constantesPosicoes.PONTO_REF)
-        clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
-        clicar(constantesPosicoes.POSICAO_FE_ANC)
-        if tag in ["FE_DTNMV", "FE_DNULL"]:
-            rolar(-200)
-        clicar(pos)
-        pausaLonga()
-        exportarDados(macro, ano, tag, "FaixaEtaria")
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
+    clicar(constantesPosicoes.POSICAO_FE_ANC)
+    clicar(constantesPosicoes.POSICAO_FE_30A39)
+    pausaLonga()
+    exportarDados(macro, ano, "FE_30A39", "FaixaEtaria")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
+    clicar(constantesPosicoes.POSICAO_FE_ANC)
+    clicar(constantesPosicoes.POSICAO_FE_40A49)
+    pausaLonga()
+    exportarDados(macro, ano, "FE_40A49", "FaixaEtaria")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
+    clicar(constantesPosicoes.POSICAO_FE_ANC)
+    clicar(constantesPosicoes.POSICAO_FE_50A59)
+    pausaLonga()
+    exportarDados(macro, ano, "FE_50A59", "FaixaEtaria")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
+    clicar(constantesPosicoes.POSICAO_FE_ANC)
+    clicar(constantesPosicoes.POSICAO_FE_60A64)
+    pausaLonga()
+    exportarDados(macro, ano, "FE_60A64", "FaixaEtaria")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
+    clicar(constantesPosicoes.POSICAO_FE_ANC)
+    clicar(constantesPosicoes.POSICAO_FE_ACI65)
+    pausaLonga()
+    exportarDados(macro, ano, "FE_ACI65", "FaixaEtaria")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
+    clicar(constantesPosicoes.POSICAO_FE_ANC)
+    clicar(constantesPosicoes.POSICAO_FE_ATE17)
+    pausaLonga()
+    exportarDados(macro, ano, "FE_ATE17", "FaixaEtaria")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
+    clicar(constantesPosicoes.POSICAO_FE_ANC)
+    rolar(-200)
+    clicar(constantesPosicoes.POSICAO_FE_DTNMV)
+    pausaLonga()
+    exportarDados(macro, ano, "FE_DTNMV", "FaixaEtaria")
+
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
+    clicar(constantesPosicoes.POSICAO_FE_ANC)
+    rolar(-200)
+    clicar(constantesPosicoes.POSICAO_FE_DNULL)
+    pausaLonga()
+    exportarDados(macro, ano, "FE_DNULL", "FaixaEtaria")
 
     clicar(constantesPosicoes.PONTO_REF)
     clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
     clicar(constantesPosicoes.POSICAO_FE_ANC)
     pausaCurta()
+
 
 def carregarFiltros(macro, ano):
     carregarBolsaFamilia(macro, ano)

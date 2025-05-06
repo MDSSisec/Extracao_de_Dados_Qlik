@@ -8,6 +8,7 @@ def main():
     print('Inicializando script')
     macro, ano = selecionarMacros()
     carregarFiltros(macro, ano)
+    print('Extração finalizada')
 
 if __name__ == '__main__':
     main()
