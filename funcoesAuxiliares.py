@@ -7,7 +7,7 @@ import constantesPosicoes
 from datetime import datetime
 
 # === VARIÁVEIS GLOBAIS ===
-PASTA_DOWNLOADS = r"D:\Donwloads\QLIK" # Alterar aqui
+PASTA_DOWNLOADS = r"D:\Donwloads\QLIK" # altrera aqui
 macro_atual = None
 ano_atual = None
 
@@ -15,7 +15,7 @@ def pausaCurta():
     sleep(1)
 
 def pausaLonga():
-    sleep(3.8)
+    sleep(25) # PorCNPJ = 25 // PorUF = 4
 
 def clicar(posicao):
     pausaCurta()
@@ -46,6 +46,18 @@ def get_ultimo_arquivo_baixado():
         raise FileNotFoundError("Nenhum arquivo .xlsx encontrado na pasta de downloads.")
     return max(arquivos, key=os.path.getmtime)
 
+def escolherPorUF():
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_POR_UF)
+    pausaCurta()
+    sleep(3) 
+
+def escolherPorCNPJ():
+    clicar(constantesPosicoes.PONTO_REF)
+    clicar(constantesPosicoes.POSICAO_POR_CNPJ)
+    pausaCurta()
+    sleep(3)
+
 def renomear_ultimo_download(macro, ano, filtro_tag, filtro_pasta):
     novo_nome = f"{macro}_{ano}_{filtro_tag}.xlsx"
 
@@ -62,7 +74,7 @@ def renomear_ultimo_download(macro, ano, filtro_tag, filtro_pasta):
     if os.path.exists(caminho_destino):
         raise FileExistsError(f"O arquivo {caminho_destino} já existe. Abortando.")
 
-    sleep(2.5)  # alterar aqui?
+    sleep(2.5)  # PorCNPJ = 2.5 // PorUF = 1
     arquivo_origem = get_ultimo_arquivo_baixado()
     os.rename(arquivo_origem, caminho_destino)
     print(f"✅ Arquivo movido para: {caminho_destino}")
@@ -73,25 +85,33 @@ def exportarDados(macro, ano, filtro_tag, filtro_pasta=None):
     clicar(constantesPosicoes.POSICAO_ITEM_BAIXAR)
     clicar(constantesPosicoes.POSICAO_ITEM_DADOS)
     clicar(constantesPosicoes.POSICAO_ITEM_EXPORTAR)
+    print("Aguarde...")
+    sleep(33) # PorCNPJ = 33 // PorUF = 1
+    print("Sleep finalizado")
     clicar(constantesPosicoes.POSICAO_ITEM_LINK)
     clicar(constantesPosicoes.POSICAO_ITEM_FECHAR)
     pausaCurta()
-    sleep(12) # ou alterar aqui
+    sleep(5) # PorCNPJ = 5 // PorUF = 5
     renomear_ultimo_download(macro, ano, filtro_tag, filtro_pasta)
 
 # === INTERAÇÃO ===
 
 def selecionarMacros():
     macro_opcao = int(input("Digite 1 para escolher a macro PorUF ou digite 2 para escolher a macro PorCNPJ: "))
-    ano_opcao = int(input("Selecione um número de 0 a 5 para escolher o ano (0=2020, 1=2021, ..., 5=2025): "))
-
-    macro = "PorUF" if macro_opcao == 1 else "PorCNPJ"
-    ano = 2020 + ano_opcao
+    ano_opcao = int(input("Selecione um número de 0 a 5 para escolher o ano (0=2020, 1=2021, 2=2022, 3=2023, 4=2024, 5=2025): "))
 
     if macro_opcao not in [1, 2]:
         sys.exit("Número da macro inválido.")
     if not 0 <= ano_opcao <= 5:
         sys.exit("Número de ano inválido.")
+
+    macro = "PorUF" if macro_opcao == 1 else "PorCNPJ"
+    ano = 2020 + ano_opcao
+
+    if macro_opcao == 1:
+        escolherPorUF()
+    else:
+        escolherPorCNPJ()
 
     clicar(constantesPosicoes.PONTO_REF)
     clicar(constantesPosicoes.POSICAO_DO_ANO)
@@ -103,7 +123,7 @@ def selecionarMacros():
 
     exportarDados(macro, ano, "GERAL", None)
 
-    return macro, ano 
+    return macro, ano
 
 def carregarBolsaFamilia(macro, ano):
     print('Carregando filtro - Bolsa Familia')
@@ -460,7 +480,6 @@ def carregarFaixaEtaria(macro, ano):
     clicar(constantesPosicoes.POSICAO_DA_FAIXA_ETARIA)
     clicar(constantesPosicoes.POSICAO_FE_ANC)
     pausaCurta()
-
 
 def carregarFiltros(macro, ano):
     carregarBolsaFamilia(macro, ano)

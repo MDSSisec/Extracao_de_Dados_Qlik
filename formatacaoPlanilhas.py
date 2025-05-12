@@ -57,7 +57,6 @@ MAPEAMENTO = {
         f'PorUF_{ANO}_FE_40A49.xlsx': ('Faixa Etária', '40 a 49 anos'),
         f'PorUF_{ANO}_FE_50A59.xlsx': ('Faixa Etária', '50 a 59 anos'),
         f'PorUF_{ANO}_FE_60A64.xlsx': ('Faixa Etária', '60 a 64 anos'),
-        f'PorUF_{ANO}_FE_60M.xlsx': ('Faixa Etária', '60 anos ou mais'),
         f'PorUF_{ANO}_FE_ACI65.xlsx': ('Faixa Etária', 'Acima de 65 anos'),
         f'PorUF_{ANO}_FE_ATE17.xlsx': ('Faixa Etária', 'Até 17 anos'),
         f'PorUF_{ANO}_FE_DNULL.xlsx': ('Faixa Etária', 'Data de nascimento nula'),
