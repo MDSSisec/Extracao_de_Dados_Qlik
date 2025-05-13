@@ -7,7 +7,7 @@ import constantesPosicoes
 from datetime import datetime
 
 # === VARIÁVEIS GLOBAIS ===
-PASTA_DOWNLOADS = r"D:\Donwloads\QLIK" # altrera aqui
+PASTA_DOWNLOADS = r"/home/administrador/Documentos/QLIK" # altrera aqui
 macro_atual = None
 ano_atual = None
 
@@ -86,7 +86,7 @@ def exportarDados(macro, ano, filtro_tag, filtro_pasta=None):
     clicar(constantesPosicoes.POSICAO_ITEM_DADOS)
     clicar(constantesPosicoes.POSICAO_ITEM_EXPORTAR)
     print("Aguarde...")
-    sleep(33) # PorCNPJ = 33 // PorUF = 1
+    sleep(60) # PorCNPJ = 33 // PorUF = 1
     print("Sleep finalizado")
     clicar(constantesPosicoes.POSICAO_ITEM_LINK)
     clicar(constantesPosicoes.POSICAO_ITEM_FECHAR)
